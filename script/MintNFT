@@ -1,0 +1,14 @@
+// SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.8.13;
+
+import {Script} from "forge-std/Script.sol";
+import {NFTSatu} from "../src/NFTSatu.sol";
+
+contract MintNFT is Script {
+    function run() external {
+        vm.startBroadcast();
+        NFTSatu nft = NFTSatu(0xD22FFb5f4D22403430a5d769d6EEdd79645E5c59);
+        nft.mintNFT("https://ipfs.io/ipfs/bafkreigxnhhmoeyg5vjfcrlr4yluostuxuivpehn77i5uzt4uc4e5zdp2i");
+        vm.stopBroadcast();
+    }
+}
